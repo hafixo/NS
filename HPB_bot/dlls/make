@@ -5,7 +5,7 @@
 #
 
 # the following specifies the path to your MOD...
-MOD_DIR = /usr/local/games/Half-life/hlds_l/ns
+MOD_DIR = ../
 
 CPP = egcs
 
