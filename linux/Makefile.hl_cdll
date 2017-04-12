@@ -32,7 +32,7 @@ INCLUDEDIRS= -I$(HL_SRC_DIR) -I$(NS_MOD_SRC_DIR) -I$(COMMON_SRC_DIR) -I$(PUBLIC_
 ifeq ($(OS),Darwin)
 LDFLAGS=$(SHLIBLDFLAGS) $(CPP_LIB) -framework Carbon $(CFG)/vgui.dylib -L. -lSDL2-2.0.0
 else
-LDFLAGS=$(SHLIBLDFLAGS) $(CPP_LIB) -lpng -lz -lfmod-3.75 -L$(CFG) vgui.so -L. libSDL2-2.0.so.0 -L. libparticleMP.a 
+LDFLAGS=$(SHLIBLDFLAGS) $(CPP_LIB) -lpng -lz -L$(CFG) vgui.so -L. libSDL2-2.0.so.0 -L. libparticleMP.a 
 endif
 
 DO_CC=$(CPLUS) $(INCLUDEDIRS) $(CFLAGS) -o $@ -c $<
