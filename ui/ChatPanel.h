@@ -9,9 +9,11 @@
 #include "AvHFont.h"
 #include <string>
 
+#ifndef NO_SDL
 #include <SDL2/SDL_events.h>	
 #include <SDL2/SDL_keyboard.h>	
 #include <SDL2/SDL_keycode.h>	
+#endif
 
 
 class ChatPanel : public vgui::Panel, public vgui::CDefaultInputSignal
@@ -38,7 +40,9 @@ private:
     std::string mChatMode;
 	std::string UTF8toASCII(unsigned char* multibyte);
     bool        mKeyPushed[256];
+#ifndef NO_SDL
 	SDL_Event event;
+#endif
 };
 
 #endif

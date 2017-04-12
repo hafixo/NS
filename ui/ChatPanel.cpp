@@ -210,6 +210,7 @@ std::string ChatPanel::UTF8toASCII(unsigned char* multibyte)
 
 void ChatPanel::KeyEvent()
 {
+#ifndef NO_SDL
 	const Uint8 *state = SDL_GetKeyboardState(NULL);	
 
 	if (SDL_PollEvent(&event)) {
@@ -264,4 +265,5 @@ void ChatPanel::KeyEvent()
 
 		CancelChat();
 	}
+#endif
 }

@@ -11,7 +11,9 @@
 #include <windows.h>
 #endif
 
+#ifndef NO_OPENGL
 #include <GL/gl.h>
+#endif
 // XXX #include <iostream.h>
 
 // Emit OpenGL calls to draw the particles. These are drawn with
@@ -21,6 +23,7 @@
 // XXX const_size is ignored.
 PARTICLEDLL_API void pDrawGroupp(int primitive, bool const_size, bool const_color)
 {
+#ifndef NO_OPENGL
 	_ParticleState &_ps = _GetPState();
 
 	// Get a pointer to the particles in gp memory
@@ -146,4 +149,5 @@ PARTICLEDLL_API void pDrawGroupl(int dlist, bool const_size, bool const_color, b
 
 		glPopMatrix();
 	}
+	#endif
 }

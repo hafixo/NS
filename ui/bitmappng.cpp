@@ -8,6 +8,7 @@
 #include "VGUI.h"
 #include "bitmappng.h"
 #include <memory.h>
+#include <string.h>
 
 BitmapPNG::BitmapPNG(int width, int height, uchar* data)
 {
